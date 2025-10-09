@@ -1,8 +1,8 @@
 FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 
-# Copy pre-built JAR
-COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
+# Copy JAR from project root
+COPY demo-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose port
 EXPOSE 8080
