@@ -1,0 +1,5 @@
+com\example\demo\service\UserService.class
+com\example\demo\controller\usercontroller.class
+com\example\demo\DemoApplication.class
+com\example\demo\model\datamodel.class
+com\example\demo\repository\jparepository.class
