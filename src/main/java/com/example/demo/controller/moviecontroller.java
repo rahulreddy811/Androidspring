@@ -14,9 +14,12 @@ import java.util.List;
 public class moviecontroller {
 
 
+    @Autowired
     private tmdbmovieservice tmbdservice;
 
-    @GetMapping("/Random")
+
+
+    @GetMapping("/random")
     public List<TmdbMovieModel> getmovies(){
         return tmbdservice.RandomMovies();
     }
