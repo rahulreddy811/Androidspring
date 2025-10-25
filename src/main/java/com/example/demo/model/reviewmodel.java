@@ -9,14 +9,22 @@ import jakarta.persistence.Table;
 public class reviewmodel {
 
     @Id
-    private String Moviename;
+    private String moviename;
     private String username;
-    private String Review;
+    private String review;
 
-    public reviewmodel(String username, String moviename, String review) {
+    public reviewmodel(String moviename, String username, String review) {
+        this.moviename = moviename;
         this.username = username;
-        this.Moviename = moviename;
-        this.Review = review;
+        this.review = review;
+    }
+
+    public String getMoviename() {
+        return moviename;
+    }
+
+    public void setMoviename(String moviename) {
+        this.moviename = moviename;
     }
 
     public String getUsername() {
@@ -27,19 +35,11 @@ public class reviewmodel {
         this.username = username;
     }
 
-    public String getMoviename() {
-        return Moviename;
-    }
-
-    public void setMoviename(String moviename) {
-        Moviename = moviename;
-    }
-
     public String getReview() {
-        return Review;
+        return review;
     }
 
     public void setReview(String review) {
-        Review = review;
+        this.review = review;
     }
 }
