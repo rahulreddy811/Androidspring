@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface reviewrepository extends JpaRepository<reviewmodel,String> {
-   Optional<reviewmodel> findbyMoviename(String Moviename);
+   Optional<reviewmodel> findyMoviename(String Moviename);
 }
