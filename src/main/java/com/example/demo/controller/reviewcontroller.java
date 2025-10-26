@@ -17,7 +17,7 @@ public class reviewcontroller {
     @Autowired
     private ReviewService review;
 
-    @GetMapping("/moviereview")
+    @GetMapping("/moviereview/{moviename}")
     public ResponseEntity<reviewmodel> getbymoviename(@PathVariable String moviename){
 
         Optional<reviewmodel> moviereview = review.getbymovie(moviename);
