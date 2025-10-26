@@ -14,7 +14,7 @@ public class ReviewService {
     reviewrepository reviewrepo;
 
     public Optional<reviewmodel> getbymovie(String moviename){
-        return reviewrepo.findyMoviename(moviename);
+        return reviewrepo.findByMoviename(moviename);
     }
 
     public reviewmodel savereview(reviewmodel review){
