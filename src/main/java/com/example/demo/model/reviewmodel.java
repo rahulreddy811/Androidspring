@@ -14,7 +14,7 @@ public class reviewmodel {
     private String review;
 
     public reviewmodel() {}
-    
+
     public reviewmodel(String moviename, String username, String review) {
         this.moviename = moviename;
         this.username = username;
