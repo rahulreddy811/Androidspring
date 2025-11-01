@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -18,15 +19,15 @@ public class reviewcontroller {
     private ReviewService review;
 
     @GetMapping("/moviereview/{moviename}")
-    public ResponseEntity<reviewmodel> getbymoviename(@PathVariable String moviename){
+    public ResponseEntity<List<reviewmodel>> getbymoviename(@PathVariable String moviename){
 
-        Optional<reviewmodel> moviereview = review.getbymovie(moviename);
+        List<reviewmodel> moviereview = review.getbymovie(moviename);
 
-        if (moviereview.isPresent()){
-            return ResponseEntity.ok(moviereview.get());
+        if (moviereview.isEmpty()){
+            return ResponseEntity.notFound().build();
         }
         else{
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.ok(moviereview);
         }
     }
 

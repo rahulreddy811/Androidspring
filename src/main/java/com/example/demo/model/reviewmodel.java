@@ -1,24 +1,33 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "review")
 public class reviewmodel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String moviename;
     private String username;
     private String review;
 
     public reviewmodel() {}
 
-    public reviewmodel(String moviename, String username, String review) {
+    public reviewmodel(Long id, String moviename, String username, String review) {
+        this.id = id;
         this.moviename = moviename;
         this.username = username;
         this.review = review;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getMoviename() {

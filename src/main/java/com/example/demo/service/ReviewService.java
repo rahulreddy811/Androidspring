@@ -5,7 +5,7 @@ import com.example.demo.repository.reviewrepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
 
 @Service
 public class ReviewService {
@@ -13,8 +13,8 @@ public class ReviewService {
     @Autowired
     reviewrepository reviewrepo;
 
-    public Optional<reviewmodel> getbymovie(String moviename){
-        return reviewrepo.findByMoviename(moviename);
+    public List<reviewmodel> getbymovie(String moviename){
+        return reviewrepo.findAllByMoviename(moviename);
     }
 
     public reviewmodel savereview(reviewmodel review){

@@ -4,9 +4,9 @@ import com.example.demo.model.reviewmodel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import java.util.List;
 
 @Repository
 public interface reviewrepository extends JpaRepository<reviewmodel,String> {
-   Optional<reviewmodel> findByMoviename(String moviename);
+   List<reviewmodel> findAllByMoviename(String moviename);
 }
